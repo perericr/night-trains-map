@@ -1,0 +1,10 @@
+connections over Bohumin
+
+		Warsawa	Krakow	Praha	Berlin	Decin	Kosice	Humenne
+				
+Budapest 20:05	(07:15)	07:25	04:35	09:07	06:16	-	-
+Praha 22:00	07:15	-	-	-	-	07:41	-
+Praha 23:09	-	07:25	-	-	-	09:01	10:33
+Wien 22:50	07:15	07:05	04:35	09:07	06:16	07:41	-
+
+
