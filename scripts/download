@@ -4,9 +4,8 @@
 
 mkdir -p background
 cd background
-
 wget -N -nd http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_land.zip
 wget -N -nd http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_lakes.zip
-wget -N -nd http://naciscdn.org/naturalearth/10m/cultural/ne_10m_railroads.zip
-
+wget -N -nd http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_railroads.zip
+wget -N -nd http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/ne_50m_admin_0_boundary_lines_land.zip
 for I in *.zip;do unzip -o $I;done
