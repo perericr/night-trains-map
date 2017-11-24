@@ -4,10 +4,12 @@ Files
 =====
 night-trains-map.qgs	QGIS project file
 scripts/download	script to download sources
+scripts/convert		script to make HTML route overview
 
 routes.csv		night train routes with data
 colors.csv		colors used by the routes
 frequencies.csv		operating frequencies used by the routes
+operators.csv		operators with name and web pages
 
 segments.shp		track segments used by night train lines
 ferries.shp		night ferry routes (not active at the moments)
