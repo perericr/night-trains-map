@@ -48,12 +48,12 @@
 "mt";"d";"Moskva – Tallin";"RZD";"Baltic Express";;"tågpar 33,34";"turqoise";;;;
 "rsm";"d";"Riga – Moskva/S:t Petersburg";"RZD";;;"tågpar 001,002 till Moskva. tågpar 037,038 till S:t Petersburg";"pink";;;;
 "km";"d";"Kaliningrad – Vilnius – Moskva";"RZD LG";;;"tågpar 29,30 Moskva-Vilnius. tågpar 29/30 ”Amber” Moskva-Kaliningrad";"yellow";;;;
-"mw";"d";"Moskva – Warsawa";"RZD";;;"tågpar 9,10 till Warzsawa. tågpar 7,8 till Brest. tågpar 211,212 till Minsk. Också tåg till Moskva-Berlin/Paris/Praha/Nice";"orange";"PKP";;;
-"mp";"w";"Moskva – Warsawa – Berlin – Paris";"RZD";;;"tågpar 23/24 till Berlin. tågpar 9,10 till Paris";"orange";;;;
-"mpw";"w";"Moskva – Warsawa – Praha/Wien/Nice";"RZD";;;"tågpar 017Б,018Б till Nice. tågpar 021,022 ”Vlatva” till Prag med kursvagn till Wien";"light green";;;;
-"stm";"d";"S:t Petersburg – Vilnius/Kaliningrad/Minsk/Grodno";"RZD";;;"tågpar 79,80 till Kaliningrad. tågpar 51/52 till Minsk";"lilac";;;;
-"stm_k";"w";"-Grodno";"RZD";;;;"lilac";;;;
-"stm_g";"w";"-Grodno";"RZD";;;;"lilac";;;;
+"mw";"d";"Moskva – Warszawa";"RZD";;;"tågpar 9,10 till Warzsawa. tågpar 7,8 till Brest. tågpar 211,212 till Minsk. Också tåg till Moskva-Berlin/Paris/Praha/Nice";"orange";"PKP";;;
+"mp";"w";"Moskva – Warszawa – Berlin – Paris";"RZD";;;"tågpar 23/24 till Berlin. tågpar 9,10 till Paris";"orange";;;;
+"mpw";"w";"Moskva – Warszawa – Praha/Wien/Nice";"RZD";;;"tågpar 017Б,018Б till Nice. tågpar 021,022 ”Vlatva” till Prag med kursvagn till Wien";"light green";;;;
+"stm";"d";"S:t Petersburg – Vilnius/Kaliningrad/Minsk/Hrodna";"RZD";;;"tågpar 79,80 till Kaliningrad. tågpar 51/52 till Minsk";"lilac";;;;
+"stm_k";"w";"-Kaliningrad";"RZD";;;;"lilac";;;;
+"stm_g";"w";"-Hrodna";"RZD";;;;"lilac";;;;
 ;;;;;;;;;;;
 "plwz";"d";"Warszawa – Swinoujscie/Szklarska Poręba";"PKP";"TLK";;"TLK 18178";"turqoise";;;;
 "plwk";"d";"Warszawa – Kiev";"PKP";"TLK";"Kiev Express";"TLK 68";"pink";;;;
@@ -75,7 +75,7 @@
 "wr";"d";"Wien/München – Milano/Roma/Livorno";"ÖBB";"NightJet";"(tidigare Allegro Tosca)";"tågpar EN 234,235, delas";"blue";;;;
 "wr_l";"s";"-Livorno";;;;;"blue";;;;
 "zz";"d";"Zurich – Graz/Zagreb/Belgrad";"ÖBB SBB HZ";"NightJet";;"EN 465, sovvagnar till Zagreb";"red";;;;
-"ww";"d";"Wien – Berlin/Warszawa/Krakow/Košice";"ÖBB PKP MAV ČD SZZK";"NightJet";"Silesia till Krakow, Chopin till Warsawa";"ett tågpar, delas på flera ställen: EN 402,403 till Krakow";"red";;;;
+"ww";"d";"Wien – Berlin/Warszawa/Krakow/Košice";"ÖBB PKP MAV ČD SZZK";"NightJet";"Silesia till Krakow, Chopin till Warszawa";"ett tågpar, delas på flera ställen: EN 402,403 till Krakow";"red";;;;
 "ww_z";"w";"-Zwolen";;;;;"red";;;;
 ;;;;;;;;;;;
 "pk";"d";"Cheb – Prag – Warszawa/Košice/Humenne";"SZZK";;"Bohemia(?)";"två tågpar: EN 445 till Kosice, EN 443 till Humenne";"yellow";;;;
@@ -94,13 +94,13 @@
 "bsib";"d";"Budapest – Sighisoara – Bucharest";"MAV";;"Ister";;"maroon";;;;
 "bb";"d";"Wien – Budapest – Bucharest";"MAV CFR";;"Dacia";;"yellow green";;;;"sovvagn bara delvis?"
 ;;;;;;;;;;;
-"arco";"d";"Arad – Bucharest – Constanta";"CFR";;;"ett tågpar IR1821,1822";"orange";;;;
-"tibo";"d";"Timisoara – Botosani/Iasi/Sighetu Marmației";"CFR";;;;"blue";;;;"flera tåg"
+"arco";"d";"Arad – Bucharest – Constanța";"CFR";;;"ett tågpar IR1821,1822";"orange";;;;
+"tibo";"d";"Timisoara – Botoșani/Iasi/Sighetu Marmației";"CFR";;;;"blue";;;;"flera tåg"
 "bbis";"d";"Bucharest – Bistrita/Satu Mare/Targu Mures";"CFR";;;"ett tågpar, delas";"green";;;;
 "bbis";"d";"Bucharest – Sighetu Marmației";"CFR";;;;"green";;;;
 "bbis";"d";"Bucharest – Cluj-Napoca";"CFR";;;;"green";;;;
 "bors";"d";"Bucharest – Oradea – Satu Mare";"CFR";;;;"pink";;;;
-"bbot";"d";"Bucharest – Botosani/Chisinau/Suceava/Vatra Dornei";"CFR";;;"ett tågpar till Botosani/Suceava, delas. varsitt tågpar i övrigt";"turqoise";;;;
+"bbot";"d";"Bucharest – Botosani/Chișinău/Suceava/Vatra Dornei";"CFR";;;"ett tågpar till Botosani/Suceava, delas. varsitt tågpar i övrigt";"turqoise";;;;
 "buki";"w";"Bucharest – Kiev";"UZ";;"Bukowina";"kursvagnar";"light green";;;;
 "bias";"d";"Bucharest – Iasi";"CFR";;;;"lilac";;;;
 ;;;;;;;;;;;
@@ -119,7 +119,7 @@
 "kilv";"d";"Kiev – Lviv – Ivano-Frankivsk/Przemysl/Truskavets";"UZ";;;"ett tågpar per destination";"red";;;;
 "khuj";"d";"Odessa/Kharkiv – Lviv – Ujgorod/Chernovcy";"UZ";;;;"green";;;;
 "khuj_u";"w";"-Ujgorod";"UZ";;;;"green";;;;
-"odm";"d";"Odessa/Chisinau – Kiev – Moskva";"RZD";;;"ett tågpar, delas";"lilac";"UZ";;;
+"odm";"d";"Odessa/Chișinău – Kiev – Moskva";"RZD";;;"ett tågpar, delas";"lilac";"UZ";;;
 "odm_c";"w";"-Chisinau";"RZD";;;;"lilac";"UZ";;;
 "kimi";"d";"Kiev – Minsk/S:t Petersburg";"UZ";;;"ett tågpar, delas";"turqoise";;;;
 "kima";"d";"Kiev – Mariupol/Nowoalekseewka";"UZ";;;;"maroon";;;;
