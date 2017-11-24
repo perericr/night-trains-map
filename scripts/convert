@@ -1,0 +1,187 @@
+#!/usr/bin/perl -w
+#convert night train maps CSV to HTML snippets
+
+use strict;
+use feature 'unicode_strings';
+use utf8;
+
+use Text::CSV;
+use Encode;
+
+# -- läser filer --
+
+my $colors=csv_read("colors.csv");
+my $colors_h=id_hash($colors,'name');
+my $frequencies=csv_read("frequencies.csv");
+my $frequencies_h=id_hash($frequencies);
+my $operators=csv_read("operators.csv");
+my $operators_h=id_hash($operators);
+my $routes=csv_read("routes.csv");
+id_link_multi($routes,'operator',$operators_h);
+id_link($routes,'frequency',$frequencies_h);
+id_link($routes,'color',$colors_h);
+
+use Data::Dumper;
+
+# -- gör html --
+
+open my $out,">:encoding(utf8)",'routes.hi' or die;
+
+print $out '<th></th>';
+print $out '<th>Frekvens</th>';
+print $out '<th>Operatör</th>';
+print $out '<th>Rutt</th>';
+
+my $n=0;
+for my $r (@$routes){
+    defined($r->{id}) or next;
+    $r->{id}=~/_/ and next;
+    print $out '<tr class="main" data-id="train-details-'.$n.'">';
+    print $out '<td><span style="color:rgba('.$r->{color_o}->{RGB}=~s/255$/1/r.')" title="'.$r->{color}.'">⬛</td>'."\n";
+    print $out '<td><span title="'.$r->{frequency_o}->{description}.'">'.$r->{frequency_o}->{name}.'</td>'."\n";
+    print $out '<td>'.(join(' ',map {'<span title="'.$_->{name}.'">'.$_->{id}.'</span>'} @{$r->{operator_os}})).'</td>'."\n";
+    print $out '<td>'.$r->{route}.'</td>'."\n";
+    print $out '</tr>';
+    print $out '<tr class="details" id="train-details-'.$n.'"><td colspan="4"><div class="pr"><dl>';
+    if(defined($r->{operator})){
+	print $out '<dt>Operatör</dt><dd>'.(join(' ',map {$_->{id}.' ('.$_->{name}.')</br>'} @{$r->{operator_os}})).'</dd>'."\n";
+    };
+    if(defined($r->{brand})){
+	print $out '<dt>Koncept</dt><dd>'.($r->{brand}).'</dd>'."\n";
+    };
+    if(defined($r->{name})){
+	print $out '<dt>Namn</dt><dd>'.($r->{name}).'</dd>'."\n";
+    };
+    if(defined($r->{trains})){
+	print $out '<dt>Tåg på sträckan</dt><dd>'.($r->{trains}).'</dd>'."\n";
+    };
+    my $i;
+    $i=info_urls($r,'booking');
+    if(defined($i) and $i){
+	print $out '<dt>Bokning</dt><dd>'.$i.'</dd>'."\n";
+    };
+    $i=info_urls($r,'information');
+    if(defined($i) and $i){
+	print $out '<dt>Mer information</dt><dd>'.$i.'</dd>'."\n";
+    };
+    print $out '</dl></div></td></tr>';
+    $n++;
+};
+
+close $out;
+
+# ---- funktioner ----
+
+sub info_urls{
+    # styled information urls for key ('booking' or 'information')
+    my $r=shift() or die;
+    my $key=shift() or die;
+
+    my $urls=[];
+    for my $op (@{$r->{operator_os}}){
+	if(defined($op->{$key})){
+	    push @$urls,'<a href="'.$op->{$key}.'">'.$op->{id}.'</a>';
+	};
+    };
+    for my $in (split(/\s+/,$r->{"${key}_also"}//'')){
+	if(defined(my $op=$operators_h->{$in})){
+	    if(defined($op->{$key})){
+		push @$urls,'<a href="'.$op->{$key}.'">'.$op->{id}.'</a>';
+	    };
+	}
+	else{
+	    if($in=~/^http/){
+		push @$urls,'<a href="'.$in.'">'.$key.'</a>';
+	    }
+	    else{
+		push @$urls,$in;
+	    };
+	};
+    };
+    
+    return join('<br>',@$urls);
+};
+
+sub id_link{
+    # make link to elements in h from elements i a, based on key
+    my $a=shift() or die;
+    my $key=shift() or die;
+    my $h=shift() or die;
+
+    for my $e (@$a){
+	if($e->{$key}//''){
+	    if($h->{$e->{$key}}){
+		$e->{$key.'_o'}=$h->{$e->{$key}};
+	    }
+	    else{
+		warn "uknown $key element $e->{$key}";
+	    };
+	};
+    };
+}
+
+sub id_link_multi{
+    # make link to elements in h from elements i a, based on key
+    # makes array with links for each element, based on space-separated tokens
+    my $a=shift() or die;
+    my $key=shift() or die;
+    my $h=shift() or die;
+
+    for my $e (@$a){
+	my $os=[];
+	for my $v (split(/\s+/,$e->{$key}//'')){
+	    if(defined($h->{$v})){
+		push @$os,$h->{$v};
+	    }
+	    else{
+		warn "uknown $key element $v";
+	    };
+	};
+	$e->{$key.'_os'}=$os;
+    };
+}
+
+sub id_hash{
+    # makes hash from array based on elements key (or 'id') property
+    my $a=shift() or die;
+    my $key=(shift() or 'id');
+    
+    my $h={};
+    for my $e (@$a){
+	if($e->{$key}//''){
+	    $h->{$e->{$key}}=$e;
+	};
+    };
+    return $h;
+};
+
+sub csv_read{
+    # reads a csv file to array of hashes
+    my $filename=shift() or die;
+
+    my $a=[];
+
+    my $csv=Text::CSV->new({binary=>1,eol=>$/,sep_char=>';',allow_whitespace=>1,blank_is_undef=>1}) or die;
+    open my $fh,"<:encoding(utf8)",$filename or die;
+
+    # läser rubriker
+    $csv->column_names($csv->getline($fh));
+    
+    # läser resten
+    while(my $h=$csv->getline_hr($fh)){
+	push @$a,$h;
+    };
+    close $fh;
+    return $a;
+};
+
+sub hash_replace{
+    my $in=shift();
+    my $h=shift() or die;
+
+    while($in=~/\{\{\s*(.*?)\s*\}\}/){
+	defined($h->{$1}) or die "fel: okänd expansion $1\n";
+	$in=~s/\{\{\s*(.*?)\s*\}\}/$h->{$1}/;
+    };
+    return $in;
+};    

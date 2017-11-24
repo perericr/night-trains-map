@@ -1,0 +1,28 @@
+"id";"name";"brand";"booking";"information";"note"
+"SJ";"SJ";;"https://www.sj.se/";"https://www.sj.se/content/dam/SJ/pdf/Natt%C3%A5g/Nattagsstrackor.pdf";
+"Veolia";"Veolia";"Snälltåget";"http://snalltaget.se/";;
+"VR";"VR Group";;"https://www.vr.fi/cs/vr/sv/etusivu_sv";"https://www.vr.fi/cs/vr/sv/fjarrtrafikens-tidtabeller";
+"NSB";"Norges Statsbaner";;"https://www.nsb.no/";"https://www.nsb.no/tilbud-om-bord/nsb-sove";
+"CAL";"Calendonian Sleeper";;"https://www.sleeper.scot/";"https://www.gwr.com/plan-journey/journey-information/on-board/night-riviera-sleeper";
+"GWR";"Great Western Railway";;"https://www.gwr.com/";"https://www.gwr.com/plan-journey/journey-information/on-board/night-riviera-sleeper ";
+"SNCF";"Société nationale des chemins de fer français";;"http://www.sncf.com/ ";"https://www.voyages-sncf.com/train/intercites-nuit";
+"Thello";"Thello";;"https://www.thello.com/en/";;
+"RENFE";"RENFE";;"http://www.renfe.com/EN/viajeros/larga_distancia/productos/trenhotel.html";"http://www.renfe.com/EN/viajeros/larga_distancia/productos/trenhotel.html";
+"FS";"Trenitalia";;"http://www.trenitalia.com/";"http://www.trenitalia.com/tcom-en/Offers/Night&AV";
+"HZ";"Hrvatske Željeznice";;"http://www.hzpp.hr/en ";"http://www.hzpp.hr/en/additional-service-in-sleeping-coaches-and-in-coaches-with-beds?m=90&mp=88";
+"TRAINOSE";"TrainOSE";;"http://www.trainose.gr/en/";"http://www.trainose.gr/en/passenger-activity/international-services/international-railway-services/";
+"SV";"Srbija Voz";;"http://serbianrailways.com/";;
+"LG";"Lietuvos geležinkeliai";;"https://www.traukiniobilietas.lt/portal/en";;
+"RZD";"Rossiyskie zheleznye dorogi";;" http://pass.rzd.ru/main-pass/public/en";"http://pass.rzd.ru/static/public/en?STRUCTURE_ID=5125";
+"PKP";"Polskie Koleje Państwowe";;"https://www.intercity.pl/en/";;
+"ÖBB";"Österreichische Bundesbahnen";"Nightjet";"http://www.nightjet.com/en/";"https://www.oebb.at/file_source/reiseportal/angebote-und-ermaessigungen/Nightjet%20NEU/OeBB-Nightjet-Folder-2017.pdf";
+"SBB";"Schweizerische Bundesbahnen";;"https://www.sbb.ch/en";;
+"SZZK";"Železničná spoločnosť Slovensko";;"http://www.slovakrail.sk/en.html";"http://www.slovakrail.sk/en/night-trains.html";
+"ČD";"České dráhy";;"https://www.cd.cz/";;
+"MAV";"Magyar Államvasutak";;"https://www.mavcsoport.hu/en";;
+"CFR";"Căile Ferate Române";;"https://www.cfrcalatori.ro/en";;
+"BDZ";"Balgarski darzhavni zheleznitsi";;"http://www.bdz.bg/en/";;
+"UZ";"Ukrzaliznytsia";;"http://www.uz.gov.ua/en/passengers/reservation_purchase_travel_documents/";;
+;;;;;
+"Loco2";"Loco2";;"https://loco2.com/";;"ticker reseller"
+"Trainline";"Trainline";;"https://www.trainline.eu/";;"ticker reseller"
