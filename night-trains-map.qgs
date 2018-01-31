@@ -3,9 +3,6 @@
     <title></title>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
         <customproperties/>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="stations20171107183455345" name="stations">
-            <customproperties/>
-        </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="frequencies20171110155453462" name="frequencies">
             <customproperties/>
         </layer-tree-layer>
@@ -13,6 +10,9 @@
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="routes20171110152500777" name="routes">
+            <customproperties/>
+        </layer-tree-layer>
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="stations20171107183455345" name="stations">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="segments20171110130143136" name="segments">
@@ -24,12 +24,12 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="ferries20171108014634880" name="ferries">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="OpenLayers_plugin_layer20171108161408829" name="OCM Public Transport">
-            <customproperties/>
-        </layer-tree-layer>
         <layer-tree-group expanded="1" checked="Qt::Checked" name="bakgrund">
             <customproperties/>
             <layer-tree-layer expanded="1" checked="Qt::Checked" id="ne_50m_admin_0_boundary_lines_land20171114133823810" name="ne_50m_admin_0_boundary_lines_land">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="OpenLayers_plugin_layer20171108161408829" name="OCM Public Transport">
                 <customproperties/>
             </layer-tree-layer>
             <layer-tree-layer expanded="1" checked="Qt::Checked" id="ne_10m_lakes20171108132346628" name="ne_10m_lakes">
@@ -44,10 +44,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>698172.5637466951739043</xmin>
-            <ymin>4773797.14237955491989851</ymin>
-            <xmax>3574352.91026116814464331</xmax>
-            <ymax>6570634.46885049436241388</ymax>
+            <xmin>1258108.74947363813407719</xmin>
+            <ymin>5926069.58404679410159588</ymin>
+            <xmax>2058136.85892602661624551</xmax>
+            <ymax>6375278.91566471755504608</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -95,11 +95,6 @@
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="stations" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="stations20171107183455345" visible="1"/>
-            </filegroup>
-        </legendlayer>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="frequencies" showFeatureCount="0">
             <filegroup open="true" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="frequencies20171110155453462" visible="1"/>
@@ -113,6 +108,11 @@
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="routes" showFeatureCount="0">
             <filegroup open="true" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="routes20171110152500777" visible="1"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="stations" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="stations20171107183455345" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="segments" showFeatureCount="0">
@@ -130,15 +130,15 @@
                 <legendlayerfile isInOverview="0" layerid="ferries20171108014634880" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OCM Public Transport" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20171108161408829" visible="1"/>
-            </filegroup>
-        </legendlayer>
         <legendgroup open="true" checked="Qt::Checked" name="bakgrund">
             <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ne_50m_admin_0_boundary_lines_land" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="ne_50m_admin_0_boundary_lines_land20171114133823810" visible="1"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OCM Public Transport" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20171108161408829" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ne_10m_lakes" showFeatureCount="0">
@@ -153,7 +153,7 @@
             </legendlayer>
         </legendgroup>
     </legend>
-    <Composer title="europa" visible="1">
+    <Composer title="europa" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="100" paperWidth="1600" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="1600" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="0" generateWorldFile="0">
             <symbol alpha="1" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -227,7 +227,7 @@
                     </Annotation>
                 </Grid>
                 <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="0.51766" positionMode="0" positionLock="false" x="0" y="0" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="1597.83" outlineWidth="0.3" uuid="{27519262-95c4-42c4-9b65-cd9905259817}" height="1605.57" itemRotation="0" frame="false" pagex="0">
+                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="0.129415" positionMode="0" positionLock="false" x="0" y="0" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="1597.83" outlineWidth="0.3" uuid="{27519262-95c4-42c4-9b65-cd9905259817}" height="1605.57" itemRotation="0" frame="false" pagex="0">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="183" blue="255" green="233"/>
                 </ComposerItem>
@@ -602,6 +602,12 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="style">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="description">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -1630,13 +1636,16 @@
                 <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="color">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="parent">
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="booking_also">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="information_also">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="source">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="field_11">
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="field_12">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
